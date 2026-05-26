@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>TabunganKu Pro</title>
 
@@ -39,31 +39,36 @@ animation:bgMove 12s ease infinite;
 
 color:white;
 
-padding:30px 20px;
-
-overflow-x:hidden;
+padding:25px;
 
 }
 
 .container{
-width:100%;
-max-width:700px;
+max-width:760px;
 margin:auto;
 }
 
-.profile-box{
+@keyframes bgMove{
 
-background:rgba(255,255,255,.04);
+0%{background-position:0% 50%;}
 
-backdrop-filter:blur(14px);
+50%{background-position:100% 50%;}
 
-border:1px solid rgba(255,255,255,.08);
+100%{background-position:0% 50%;}
+
+}
+
+/* PROFILE */
+
+.profile{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
 
 padding:22px;
 
 border-radius:28px;
-
-margin-bottom:28px;
 
 display:flex;
 
@@ -71,42 +76,30 @@ justify-content:space-between;
 
 align-items:center;
 
+margin-bottom:25px;
+
 }
 
 .profile-left{
 
 display:flex;
 
-align-items:center;
-
 gap:18px;
+
+align-items:center;
 
 }
 
 .avatar{
 
-width:70px;
-height:70px;
+width:80px;
+height:80px;
 
 border-radius:50%;
 
-background:linear-gradient(
-135deg,
-var(--gold),
-#f5d67d
-);
+overflow:hidden;
 
-display:flex;
-
-align-items:center;
-justify-content:center;
-
-font-size:32px;
-
-color:#111;
-
-box-shadow:
-0 0 25px rgba(201,168,76,.35);
+border:3px solid var(--gold);
 
 }
 
@@ -117,13 +110,9 @@ height:100%;
 
 object-fit:cover;
 
-border-radius:50%;
-
-display:block;
-
 }
 
-.profile-box h2{
+.profile h2{
 
 font-size:26px;
 
@@ -131,124 +120,157 @@ margin-bottom:6px;
 
 }
 
-.profile-box p{
+.profile p{
+
+opacity:.7;
+
+}
+
+.date{
+
+opacity:.55;
+
+font-size:13px;
+
+margin-top:8px;
+
+}
+
+/* TOP */
+
+.top-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+
+gap:14px;
+
+margin-bottom:22px;
+
+}
+
+.card{
+
+background:var(--card);
+
+padding:20px;
+
+border-radius:22px;
+
+}
+
+.card p{
 
 opacity:.65;
 
-font-size:15px;
-
-}
-
-.top-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
-
-margin-bottom:25px;
-}
-
-.top-card{
-background:var(--card);
-padding:20px;
-border-radius:22px;
-
-border:1px solid rgba(255,255,255,.05);
-}
-
-.top-card p{
-opacity:.6;
 margin-bottom:10px;
-font-size:14px;
+
 }
 
-.top-card h2{
+.card h2{
+
 font-size:28px;
+
 }
 
-.menu{
-display:flex;
-gap:15px;
+/* FORM */
 
-margin-bottom:20px;
-}
+.form{
 
-.menu button{
-flex:1;
-}
-
-button{
-padding:16px;
-border:none;
-border-radius:16px;
-
-background:var(--gold);
-
-font-weight:bold;
-cursor:pointer;
-
-transition:.3s;
-}
-
-button:hover{
-transform:translateY(-3px);
-}
-
-.pilihan-transaksi{
-display:flex;
-gap:12px;
-}
-
-.pilih-btn{
-flex:1;
-
-background:#0f1115;
-
-color:white;
-
-border:1px solid rgba(255,255,255,.08);
-}
-
-.pilih-btn.aktif{
-background:var(--gold);
-color:black;
-}
-
-.form-box{
 background:var(--card);
 
-padding:20px;
+padding:22px;
 
 border-radius:24px;
 
 display:flex;
+
 flex-direction:column;
+
 gap:15px;
 
-margin-bottom:25px;
+margin-bottom:22px;
 
-border:1px solid rgba(255,255,255,.05);
 }
 
-input,
-select{
+input{
+
 padding:15px;
 
 border:none;
+
 outline:none;
 
-border-radius:14px;
+border-radius:16px;
 
-background:#0f1115;
+background:#10141c;
+
 color:white;
+
 }
 
-.list{
+.btn-row{
+
 display:flex;
+
+gap:12px;
+
+}
+
+button{
+
+padding:15px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+.btn{
+
+flex:1;
+
+background:#10141c;
+
+color:white;
+
+}
+
+.active{
+
+background:var(--gold);
+
+color:black;
+
+}
+
+.main-btn{
+
+background:var(--gold);
+
+}
+
+/* LIST */
+
+.list{
+
+display:flex;
+
 flex-direction:column;
-gap:15px;
+
+gap:14px;
+
 }
 
 .item{
+
 background:var(--card);
 
 padding:18px;
@@ -256,102 +278,108 @@ padding:18px;
 border-radius:18px;
 
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
-border:1px solid rgba(255,255,255,.05);
-
-animation:muncul .3s ease;
-}
-
-.item p{
-opacity:.6;
-margin-top:6px;
-font-size:14px;
 }
 
 .masuk{
+
 border-left:6px solid var(--green);
+
 }
 
 .keluar{
+
 border-left:6px solid var(--red);
+
 }
 
 .green{
+
 color:var(--green);
+
 }
 
 .red{
+
 color:var(--red);
+
 }
 
-.rekap-box{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
+/* MODAL */
+
+.modal{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.7);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
 }
 
-.rekap-card{
+.show{
+
+display:flex;
+
+}
+
+.modal-box{
+
 background:var(--card);
 
-padding:25px;
+padding:28px;
 
-border-radius:20px;
+border-radius:28px;
 
-border:1px solid rgba(255,255,255,.05);
-}
+width:100%;
 
-.rekap-card h3{
-margin-bottom:12px;
-}
+max-width:520px;
 
-.rekap-card p{
-opacity:.7;
-line-height:1.7;
-}
-
-@keyframes muncul{
-
-from{
-opacity:0;
-transform:translateY(20px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
+position:relative;
 
 }
 
-@media(max-width:600px){
+.close{
 
-.item{
-flex-direction:column;
-align-items:flex-start;
-gap:10px;
+position:absolute;
+
+top:12px;
+
+right:12px;
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#2b3340;
+
+color:white;
+
 }
 
-h1{
-font-size:34px;
-}
+.rekap{
 
-}
+background:#11151d;
 
-@keyframes bgMove{
+padding:18px;
 
-0%{
-background-position:0% 50%;
-}
+border-radius:18px;
 
-50%{
-background-position:100% 50%;
-}
-
-100%{
-background-position:0% 50%;
-}
+margin-top:18px;
 
 }
 
@@ -361,122 +389,130 @@ background-position:0% 50%;
 
 <div class="container">
 
-<div class="profile-box">
+<div class="profile">
 
 <div class="profile-left">
 
 <div class="avatar">
-<img src="https://i.ibb.co/PzvcQyZ3/profile-jpg.jpg">
+
+<img src="https://i.ibb.co.com/PzvcQyZ3/profile-jpg.jpg">
+
 </div>
 
 <div>
 
 <h2>TabunganKu Pro</h2>
 
-<p>
-Kelola tabunganmu dengan rapi
-</p>
+<p>Kelola tabunganmu dengan rapi 👋</p>
+
+<div class="date" id="tanggal"></div>
 
 </div>
 
 </div>
 
+<button onclick="bukaRekap()">
+📊 Rekap
+</button>
+
 </div>
-<!-- TOP INFO -->
 
 <div class="top-grid">
 
-<div class="top-card">
+<div class="card">
+
 <p>Total Saldo</p>
-<h2 id="saldo">Rp 0</h2>
-</div>
 
-<div class="top-card">
-<p>Total Pemasukan</p>
-<h2 id="totalMasuk" class="green">
+<h2 id="saldo">
 Rp 0
 </h2>
+
 </div>
 
-<div class="top-card">
-<p>Total Pengeluaran</p>
-<h2 id="totalKeluar" class="red">
+<div class="card">
+
+<p>Total Nabung</p>
+
+<h2 id="masuk" class="green">
 Rp 0
 </h2>
+
+</div>
+
+<div class="card">
+
+<p>Total Diambil</p>
+
+<h2 id="keluar" class="red">
+Rp 0
+</h2>
+
 </div>
 
 </div>
 
-<!-- MENU -->
-
-<div class="menu">
-
-<button onclick="scrollRekap()">
-📊 Lihat Rekap
-</button>
-</div>
-
-<!-- FORM -->
-
-<div class="form-box">
+<div class="form">
 
 <input
 type="number"
 id="jumlah"
-placeholder="Jumlah uang"
->
+placeholder="Jumlah uang">
 
-<div class="pilihan-transaksi">
+<div class="btn-row">
 
 <button
-type="button"
-class="pilih-btn aktif"
+class="btn active"
 id="btnMasuk"
-onclick="pilihTipe('masuk')"
->
+onclick="pilih('masuk')">
 💸 Nabung
 </button>
 
 <button
-type="button"
-class="pilih-btn"
+class="btn"
 id="btnKeluar"
-onclick="pilihTipe('keluar')"
->
-🧾 Ambil Tabungan
+onclick="pilih('keluar')">
+🧾 Ambil
 </button>
 
 </div>
 
-<button onclick="tambahTransaksi()">
+<button
+class="main-btn"
+onclick="tambah()">
 Tambah Transaksi
 </button>
 
 </div>
 
-<div class="list" id="semuaList">
-</div>
-<!-- REKAP -->
+<div class="list" id="list"></div>
 
-<div id="rekap"></div>
-
-<div class="rekap-box">
-
-<div class="rekap-card">
-<h3>📅 Rekap Bulanan</h3>
-
-<p id="rekapBulanan">
-Belum ada data
-</p>
 </div>
 
-<div class="rekap-card">
-<h3>📆 Rekap Tahunan</h3>
+<div class="modal" id="modal">
 
-<p id="rekapTahunan">
-Belum ada data
-</p>
+<div class="modal-box">
+
+<button
+class="close"
+onclick="tutupRekap()">
+✕
+</button>
+
+<h2>📊 Rekap Tabungan</h2>
+
+<div class="rekap">
+
+<h3>Bulanan</h3>
+
+<p id="rekapBulanan"></p>
+
 </div>
+
+<div class="rekap">
+
+<h3>Tahunan</h3>
+
+<p id="rekapTahunan"></p>
 
 </div>
 
@@ -486,118 +522,124 @@ Belum ada data
 
 <script>
 
-let saldo = 0;
+let saldo=0;
+let totalMasuk=0;
+let totalKeluar=0;
+let tipe='masuk';
 
-let tipe = 'masuk';
+tanggal.innerText=
+new Date().toLocaleString('id-ID',{
+dateStyle:'full'
+});
 
-function pilihTipe(jenis){
+function pilih(x){
 
-tipe = jenis;
+tipe=x;
 
-document
-.getElementById('btnMasuk')
-.classList.remove('aktif');
+btnMasuk.classList.remove('active');
+btnKeluar.classList.remove('active');
 
-document
-.getElementById('btnKeluar')
-.classList.remove('aktif');
-
-if(jenis === 'masuk'){
-
-document
-.getElementById('btnMasuk')
-.classList.add('aktif');
-
+if(x==='masuk'){
+btnMasuk.classList.add('active');
 }else{
-
-document
-.getElementById('btnKeluar')
-.classList.add('aktif');
-
+btnKeluar.classList.add('active');
 }
 
 }
 
-let totalMasuk = 0;
+function tambah(){
 
-let totalKeluar = 0;
-
-function tambahTransaksi(){
-
-const jumlah =
+const jumlah=
 parseInt(
 document.getElementById('jumlah').value
 );
 
-if(!jumlah){
+if(!jumlah||jumlah<=0){
 
-alert('Isi dulu cuyy 😭');
+alert('Nominal tidak valid');
 
 return;
+
 }
 
-if(tipe === 'masuk'){
+if(
+tipe==='keluar'
+&&
+jumlah>saldo
+){
 
-saldo += jumlah;
+alert('Saldo tidak cukup');
 
-totalMasuk += jumlah;
+return;
+
+}
+
+if(tipe==='masuk'){
+
+saldo+=jumlah;
+totalMasuk+=jumlah;
 
 }else{
 
-saldo -= jumlah;
-
-totalKeluar += jumlah;
+saldo-=jumlah;
+totalKeluar+=jumlah;
 
 }
 
-document.getElementById('saldo')
-.innerText =
-'Rp ' +
-saldo.toLocaleString('id-ID');
+saldoEl();
+buatItem(jumlah);
 
-document.getElementById('totalMasuk')
-.innerText =
-'Rp ' +
-totalMasuk.toLocaleString('id-ID');
+jumlahInput();
 
-document.getElementById('totalKeluar')
-.innerText =
-'Rp ' +
-totalKeluar.toLocaleString('id-ID');
+rekap();
 
-const item =
+}
+
+function saldoEl(){
+
+saldo.innerText=
+'Rp '+saldo.toLocaleString('id-ID');
+
+masuk.innerText=
+'Rp '+totalMasuk.toLocaleString('id-ID');
+
+keluar.innerText=
+'Rp '+totalKeluar.toLocaleString('id-ID');
+
+}
+
+function buatItem(jumlah){
+
+const item=
 document.createElement('div');
 
-item.classList.add('item');
+item.className=
+`item ${tipe}`;
 
-item.classList.add(tipe);
-
-item.innerHTML = `
+item.innerHTML=`
 
 <div>
 
 <h3>
-${tipe === 'masuk'
-? '💸 Nabung'
-: '🧾 Ambil Tabungan'}
+${tipe==='masuk'
+?'💸 Nabung'
+:'🧾 Ambil'}
 </h3>
 
 <p>
-${new Date().toLocaleString('id-ID')}
+${new Date()
+.toLocaleString('id-ID')}
 </p>
 
 </div>
 
 <h3 class="${
-tipe === 'masuk'
-? 'green'
-: 'red'
+tipe==='masuk'
+?'green'
+:'red'
 }">
 
-${tipe === 'masuk'
-? '+'
-: '-'
-}
+${tipe==='masuk'?'+':'-'}
 
 Rp ${jumlah.toLocaleString('id-ID')}
 
@@ -605,79 +647,59 @@ Rp ${jumlah.toLocaleString('id-ID')}
 
 `;
 
-document
-.getElementById('semuaList')
-.prepend(item);
-
-const clone =
-item.cloneNode(true);
-
-if(tipe === 'masuk'){
-
-document
-.getElementById('masukList')
-.prepend(clone);
-
-}else{
-
-document
-.getElementById('keluarList')
-.prepend(clone);
+list.prepend(item);
 
 }
 
-document
-.getElementById('rekapBulanan')
-.innerHTML = `
+function jumlahInput(){
 
-Total pemasukan bulan ini:
+document
+.getElementById('jumlah')
+.value='';
+
+}
+
+function rekap(){
+
+rekapBulanan.innerHTML=`
+
+Total Nabung:
 <b class="green">
 Rp ${totalMasuk.toLocaleString('id-ID')}
 </b>
 
 <br><br>
 
-Total pengeluaran bulan ini:
+Total Ambil:
 <b class="red">
 Rp ${totalKeluar.toLocaleString('id-ID')}
 </b>
 
 `;
 
-document
-.getElementById('rekapTahunan')
-.innerHTML = `
+rekapTahunan.innerHTML=`
 
-Saldo tahun ini:
+Saldo:
 <b style="color:var(--gold)">
 Rp ${saldo.toLocaleString('id-ID')}
 </b>
 
-<br><br>
-
-Total transaksi:
-<b>
-${document.querySelectorAll('#semuaList .item').length}
-</b>
-
 `;
 
+}
 
-document.getElementById('jumlah').value='';
+function bukaRekap(){
+
+modal.classList.add('show');
 
 }
 
-function scrollRekap(){
+function tutupRekap(){
 
-document
-.getElementById('rekap')
-.scrollIntoView({
-
-behavior:'smooth'
-
-});
+modal.classList.remove('show');
 
 }
+
 </script>
 
 </body>
